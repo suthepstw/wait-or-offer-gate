@@ -1,0 +1,326 @@
+{
+  "version": "E1 v3.1 (2026-10-20, estimator (9a') + support guard)",
+  "city": "rome",
+  "params": {
+    "city": "rome",
+    "data": "data",
+    "models": "models",
+    "out": "instances_v3",
+    "n_inst": 30,
+    "pilot": 0,
+    "W": 60,
+    "T": 200,
+    "cycle_min": 60,
+    "R": [
+      150.0,
+      200.0,
+      250.0
+    ],
+    "r_main": 200,
+    "placement": "clustered",
+    "centre_src": "mixed",
+    "fleet_frac": 0.85,
+    "centre_jitter": 500.0,
+    "dens_alpha": 1.0,
+    "cell_m": 500,
+    "beta": 0.65,
+    "m_extra": 2,
+    "q_max": 3,
+    "k_rule": "density",
+    "battery_on": false,
+    "master_seed": 12345,
+    "base_run": "base_M3",
+    "base_split": "final",
+    "primary_run": "reach_tfm",
+    "ref_run": "reach_lstm",
+    "reach_split": "dev",
+    "verify_head": false,
+    "no_figs": false,
+    "force": false,
+    "selftest": false
+  },
+  "R_list": [
+    150.0,
+    200.0,
+    250.0
+  ],
+  "H": 60,
+  "W_min": 60,
+  "tau": 3.0,
+  "split_note": [
+    "test_final 2014-02-26..2014-02-28"
+  ],
+  "n_usable": 32,
+  "chosen_cycles": [
+    {
+      "k": 0,
+      "date": "2014-02-28",
+      "hour": 11,
+      "n": 77
+    },
+    {
+      "k": 1,
+      "date": "2014-02-26",
+      "hour": 15,
+      "n": 65
+    },
+    {
+      "k": 2,
+      "date": "2014-02-27",
+      "hour": 11,
+      "n": 79
+    },
+    {
+      "k": 3,
+      "date": "2014-02-26",
+      "hour": 10,
+      "n": 74
+    },
+    {
+      "k": 4,
+      "date": "2014-02-26",
+      "hour": 12,
+      "n": 77
+    },
+    {
+      "k": 5,
+      "date": "2014-02-26",
+      "hour": 8,
+      "n": 72
+    },
+    {
+      "k": 6,
+      "date": "2014-02-26",
+      "hour": 16,
+      "n": 72
+    },
+    {
+      "k": 7,
+      "date": "2014-02-28",
+      "hour": 12,
+      "n": 68
+    },
+    {
+      "k": 8,
+      "date": "2014-02-27",
+      "hour": 17,
+      "n": 89
+    },
+    {
+      "k": 9,
+      "date": "2014-02-28",
+      "hour": 20,
+      "n": 60
+    },
+    {
+      "k": 10,
+      "date": "2014-02-26",
+      "hour": 9,
+      "n": 69
+    },
+    {
+      "k": 11,
+      "date": "2014-02-28",
+      "hour": 10,
+      "n": 70
+    },
+    {
+      "k": 12,
+      "date": "2014-02-27",
+      "hour": 15,
+      "n": 66
+    },
+    {
+      "k": 13,
+      "date": "2014-02-27",
+      "hour": 8,
+      "n": 71
+    },
+    {
+      "k": 14,
+      "date": "2014-02-27",
+      "hour": 16,
+      "n": 74
+    },
+    {
+      "k": 15,
+      "date": "2014-02-28",
+      "hour": 16,
+      "n": 71
+    },
+    {
+      "k": 16,
+      "date": "2014-02-27",
+      "hour": 9,
+      "n": 71
+    },
+    {
+      "k": 17,
+      "date": "2014-02-28",
+      "hour": 7,
+      "n": 65
+    },
+    {
+      "k": 18,
+      "date": "2014-02-26",
+      "hour": 19,
+      "n": 85
+    },
+    {
+      "k": 19,
+      "date": "2014-02-28",
+      "hour": 18,
+      "n": 81
+    },
+    {
+      "k": 20,
+      "date": "2014-02-26",
+      "hour": 18,
+      "n": 89
+    },
+    {
+      "k": 21,
+      "date": "2014-02-27",
+      "hour": 12,
+      "n": 74
+    },
+    {
+      "k": 22,
+      "date": "2014-02-27",
+      "hour": 20,
+      "n": 67
+    },
+    {
+      "k": 23,
+      "date": "2014-02-27",
+      "hour": 18,
+      "n": 97
+    },
+    {
+      "k": 24,
+      "date": "2014-02-28",
+      "hour": 9,
+      "n": 80
+    },
+    {
+      "k": 25,
+      "date": "2014-02-26",
+      "hour": 11,
+      "n": 85
+    },
+    {
+      "k": 26,
+      "date": "2014-02-27",
+      "hour": 10,
+      "n": 76
+    },
+    {
+      "k": 27,
+      "date": "2014-02-28",
+      "hour": 19,
+      "n": 79
+    },
+    {
+      "k": 28,
+      "date": "2014-02-28",
+      "hour": 17,
+      "n": 82
+    },
+    {
+      "k": 29,
+      "date": "2014-02-28",
+      "hour": 8,
+      "n": 72
+    }
+  ],
+  "expand_m": 4085.783447265625,
+  "frame_check": {
+    "n": 20033,
+    "median_m": 1.139938131467027,
+    "p90_m": 6.713349327681106
+  },
+  "primary": {
+    "run": "reach_tfm",
+    "seed": "seed2",
+    "handoff": "rome/reach_tfm/D7reach_dev/E1_handoff_reach.json",
+    "sha256": {
+      "pred_test.npz": "af90762ec12d2625f32fdb619010a9a6a64fff22a169d6efb5d837deb8c04693",
+      "pred_val.npz": "78e007fcb4d5a00c91c69e445814f2b7d8a57fffdcd8692e9279ad48bbb4d3cb",
+      "calib.json": "ec4aa28b877c91d5ae5b29923de07139fc47d435041075d716f5a01a629f3295",
+      "reach_head.npz": "a4c6278b7f79922f4f6e2f344045e458a1b7aec3ee6f852c3383305422774b9b",
+      "reach_calib.json": "7a42d9a47d50dcacfde2a7295c88ba676056561017bcf97842073024ae1dd82d",
+      "qm_calib.json": "672e95534f2c285ed7fe4f02c710d853a8549b099ddf9e483a772cd5874bbd20"
+    },
+    "qcal_src": "qm_calib.json"
+  },
+  "reference": {
+    "run": "reach_lstm",
+    "seed": "seed0",
+    "handoff": "rome/reach_lstm/D7reach_dev/E1_handoff_reach.json",
+    "sha256": {
+      "pred_test.npz": "39e587e3f62154852cfa229fab0797a4b7366dcf32ef44097c078b81cc1c43c9",
+      "pred_val.npz": "ae5db0d7a3e8cef44ee015021bd1ecfa1c99753e8ea3f72bc6c0609f19a36d71",
+      "calib.json": "e11d1470f157eb4add105c85cf5096a5083b547b12f4c1e3d2cfefb6ea26db67",
+      "reach_head.npz": "efbe0da6dd9faee9f6f90eb95c63c2bf5a6e825284a47c0ab8a0ba10eba93270",
+      "reach_calib.json": "196a47961afac669d32a1cc9fb636207caace9ab36ab527089e72bfe71565f76",
+      "qm_calib.json": "94ecaef6b960202f98beebbc0817e7ab78b6ed7472bbe73c4e8f6ad3e98c20d3"
+    }
+  },
+  "base": {
+    "run": "base_M3",
+    "seed": "seed3",
+    "handoff": "rome/base_M3/D7_final/E1_handoff.json",
+    "sha256": {
+      "pred_test.npz": "e1a9ce9e4a97891575f47ba4ffa09c5fa6f66dbbba5452c6dc4fd3036d1aa4ec",
+      "pred_val.npz": "b532edba43d9777a062834d080a65b1a90af4a63a633a8661ad5a9375dc680b9",
+      "calib.json": "409077fcd666744363dc58d9db569c8b11f2a7d417831942a89e057051e79d1c",
+      "qm_calib.json": "bdeda62d876c00104d7fe496617b3797a1094cabcf9c8124c56743bc7f8ad9a4"
+    }
+  },
+  "sD7_pred_eval_sha256": "0fe82c5d0600753fb05b5b52ef2bb1dc2cadd5cbd751e34a01b5c31723399b40",
+  "gate_G2": {
+    "G2.1 (% worker ไม่มีงานเอื้อม < 40)": {
+      "ok": true,
+      "value": "10.7 %"
+    },
+    "G2.2 (% task E_i < 0.5 < 20)": {
+      "ok": false,
+      "value": "32.4 %"
+    },
+    "G2.2b (% task E_i < K_i ≤ 70)": {
+      "ok": true,
+      "value": "50.9 %"
+    },
+    "frame check (median |Y − Δx_T| ≤ 5 m)": {
+      "ok": true,
+      "value": "1.14 m (p90 6.7, n=20033)"
+    },
+    "sanity A: guarded (9a′) ≥ (9a) same encoder, overall": {
+      "ok": true,
+      "value": "model 0.806 · tfm_ub 0.799 · nog 0.717 · in-domain 51 % ของคู่"
+    },
+    "sanity B: in-domain (9a′) > (9a) (ตรงกับ D7)": {
+      "ok": true,
+      "value": "in-dom (9a′) 0.719 vs (9a) 0.702"
+    },
+    "sanity C: model > null > persistence": {
+      "ok": true,
+      "value": "qm_model 0.806 · qm_model_nog 0.717 · qm_lstm_reach 0.805 · qm_tfm_ub 0.799 · qm_lstm_ub 0.798 · qm_trajgeom 0.798 · qm_null_dv 0.769 · qm_persist_cont 0.745"
+    }
+  },
+  "thomas": {
+    "n_centres_mean": 10,
+    "w_sigma": 0.5,
+    "sig_c": [
+      300.0,
+      800.0
+    ]
+  },
+  "durations": [
+    5,
+    10,
+    15,
+    20,
+    30
+  ]
+}

@@ -1,0 +1,14 @@
+REPO_CHECK.md
+__pycache__/
+*.pyc
+venv/
+code/DataTaxiSanFran/
+code/DataTaxiRome/
+code/data/
+code/e5state/
+code/instances_*/*.npz
+code/paper_figs/
+*.npz
+!reach_head.npz
+logs*/
+log_*.txt

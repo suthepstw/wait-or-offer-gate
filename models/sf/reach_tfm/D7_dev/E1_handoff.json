@@ -1,0 +1,32 @@
+{
+  "version": 7,
+  "city": "sf",
+  "run": "reach_tfm",
+  "split": "dev",
+  "clean_only": false,
+  "sub_steps": 1,
+  "qm": "ub",
+  "qm_variant_for_E1": "qm_ub_cal",
+  "R_main": 200,
+  "seed": "seed1",
+  "AUC_qm_ub_cal@200_per_seed": {
+    "seed0": 0.8365364917807666,
+    "seed1": 0.836797948220849,
+    "seed2": 0.8372869178884446
+  },
+  "median_AUC": 0.836797948220849,
+  "files": {
+    "pred_test.npz": "sf/reach_tfm/seed1/pred_test.npz",
+    "pred_val.npz": "sf/reach_tfm/seed1/pred_val.npz",
+    "calib.json": "sf/reach_tfm/seed1/calib.json",
+    "qm_calib.json": "sf/reach_tfm/seed1/qm_calib.json"
+  },
+  "sha256": {
+    "pred_test.npz": "f7289686b9ff0ed62c84db2d1697a290565fff13edadba3f636ae0ce35fafe42",
+    "pred_val.npz": "3277329b4d5d53050d8753a56622e157a42ab47c7f55a3a0ce32d686379cfeb9",
+    "calib.json": "e13f33c2ab77f81f586d3f86e32cebb1d4c0edb50bca2973ba70b7ee9381fbb5",
+    "qm_calib.json": "bc40934644ae4481b9da6a6dbd25a75e4d5d1f144a802334179c9f9bb1b13c3f"
+  },
+  "y_max_isotonic": 0.25,
+  "note": "sai E ใช้ seed นี้ตัวเดียว: QM_ij = isotonic(qm_ub) จาก qm_calib.json กับ λ_h, T จาก calib.json · ตรวจ sha256 ก่อนใช้"
+}

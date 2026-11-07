@@ -1,0 +1,14 @@
+# config/data_sf_occstop.yaml — abl_occstop: occ(2) + stop(4) ซ้อนกัน (F_SF = ขอบบนเฉพาะ SF; ใช้เมื่อ abl_occ ผ่านเกณฑ์ M7)
+base: data_sf.yaml
+variant: occstop
+processed_dir: processed_f15
+features: [x, y, v, dx, dy, dow_sin, dow_cos, slot_sin, slot_cos, occ, occ_dt, t_since_stop, last_stop_dur, n_stops_30, moving_streak]
+occ_feature: true
+occ_dt_clip_min: 60
+stop_v_kmh: 2.0
+stop_min_s: 90
+stop_since_clip_min: 60
+stop_dur_clip_min: 30
+stop_count_window_min: 30
+stop_streak_clip_min: 60
+stop_proxy_tol_min: 2

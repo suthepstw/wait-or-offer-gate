@@ -1,0 +1,327 @@
+{
+  "version": "E1 v3.2 (2026-10-22: v3.1 + --dev N = สร้าง instance ชุด dev จาก cycle hold-out (ไม่ซ้อน 30 ตัวทดสอบ) สำหรับออกแบบ/จูน MOPSO-IQ v2)",
+  "city": "sf",
+  "params": {
+    "city": "sf",
+    "data": "data",
+    "models": "models",
+    "out": "instances_devsplit",
+    "n_inst": 30,
+    "pilot": 0,
+    "dev": 0,
+    "W": 60,
+    "T": 200,
+    "cycle_min": 60,
+    "R": [
+      150.0,
+      200.0,
+      250.0
+    ],
+    "r_main": 200,
+    "placement": "clustered",
+    "centre_src": "mixed",
+    "fleet_frac": 0.85,
+    "centre_jitter": 500.0,
+    "dens_alpha": 1.0,
+    "cell_m": 500,
+    "beta": 0.65,
+    "m_extra": 2,
+    "q_max": 3,
+    "k_rule": "density",
+    "battery_on": false,
+    "master_seed": 12345,
+    "base_run": "base_M3",
+    "base_split": "dev",
+    "primary_run": "reach_tfm",
+    "ref_run": "reach_lstm",
+    "reach_split": "dev",
+    "verify_head": false,
+    "no_figs": false,
+    "force": false,
+    "selftest": false
+  },
+  "R_list": [
+    150.0,
+    200.0,
+    250.0
+  ],
+  "H": 60,
+  "W_min": 60,
+  "tau": 3.0,
+  "split_note": [
+    "test_dev 2008-06-05..2008-06-06"
+  ],
+  "n_usable": 44,
+  "chosen_cycles": [
+    {
+      "k": 0,
+      "date": "2008-06-06",
+      "hour": 19,
+      "n": 249
+    },
+    {
+      "k": 1,
+      "date": "2008-06-06",
+      "hour": 8,
+      "n": 242
+    },
+    {
+      "k": 2,
+      "date": "2008-06-06",
+      "hour": 16,
+      "n": 156
+    },
+    {
+      "k": 3,
+      "date": "2008-06-05",
+      "hour": 20,
+      "n": 244
+    },
+    {
+      "k": 4,
+      "date": "2008-06-06",
+      "hour": 23,
+      "n": 161
+    },
+    {
+      "k": 5,
+      "date": "2008-06-05",
+      "hour": 12,
+      "n": 185
+    },
+    {
+      "k": 6,
+      "date": "2008-06-06",
+      "hour": 6,
+      "n": 172
+    },
+    {
+      "k": 7,
+      "date": "2008-06-05",
+      "hour": 16,
+      "n": 131
+    },
+    {
+      "k": 8,
+      "date": "2008-06-06",
+      "hour": 14,
+      "n": 173
+    },
+    {
+      "k": 9,
+      "date": "2008-06-05",
+      "hour": 23,
+      "n": 228
+    },
+    {
+      "k": 10,
+      "date": "2008-06-05",
+      "hour": 1,
+      "n": 137
+    },
+    {
+      "k": 11,
+      "date": "2008-06-06",
+      "hour": 11,
+      "n": 181
+    },
+    {
+      "k": 12,
+      "date": "2008-06-05",
+      "hour": 15,
+      "n": 164
+    },
+    {
+      "k": 13,
+      "date": "2008-06-06",
+      "hour": 7,
+      "n": 202
+    },
+    {
+      "k": 14,
+      "date": "2008-06-06",
+      "hour": 22,
+      "n": 151
+    },
+    {
+      "k": 15,
+      "date": "2008-06-06",
+      "hour": 15,
+      "n": 150
+    },
+    {
+      "k": 16,
+      "date": "2008-06-06",
+      "hour": 10,
+      "n": 177
+    },
+    {
+      "k": 17,
+      "date": "2008-06-05",
+      "hour": 2,
+      "n": 81
+    },
+    {
+      "k": 18,
+      "date": "2008-06-05",
+      "hour": 13,
+      "n": 193
+    },
+    {
+      "k": 19,
+      "date": "2008-06-05",
+      "hour": 6,
+      "n": 157
+    },
+    {
+      "k": 20,
+      "date": "2008-06-06",
+      "hour": 0,
+      "n": 149
+    },
+    {
+      "k": 21,
+      "date": "2008-06-06",
+      "hour": 3,
+      "n": 60
+    },
+    {
+      "k": 22,
+      "date": "2008-06-05",
+      "hour": 7,
+      "n": 194
+    },
+    {
+      "k": 23,
+      "date": "2008-06-05",
+      "hour": 22,
+      "n": 163
+    },
+    {
+      "k": 24,
+      "date": "2008-06-06",
+      "hour": 13,
+      "n": 163
+    },
+    {
+      "k": 25,
+      "date": "2008-06-06",
+      "hour": 5,
+      "n": 96
+    },
+    {
+      "k": 26,
+      "date": "2008-06-06",
+      "hour": 17,
+      "n": 129
+    },
+    {
+      "k": 27,
+      "date": "2008-06-06",
+      "hour": 21,
+      "n": 246
+    },
+    {
+      "k": 28,
+      "date": "2008-06-06",
+      "hour": 18,
+      "n": 283
+    },
+    {
+      "k": 29,
+      "date": "2008-06-05",
+      "hour": 11,
+      "n": 185
+    }
+  ],
+  "expand_m": 4562.654296875,
+  "frame_check": {
+    "n": 20138,
+    "median_m": 2.699490809753944,
+    "p90_m": 9.643956758941973
+  },
+  "primary": {
+    "run": "reach_tfm",
+    "seed": "seed2",
+    "handoff": "sf/reach_tfm/D7reach_dev/E1_handoff_reach.json",
+    "sha256": {
+      "pred_test.npz": "7bcf961d08c7ef8ac652d655c5dbcc46f7863672ff6f34cb09414242ae412cf5",
+      "pred_val.npz": "46f65f2c538b93d6f852a1b73da21646c78961634d0148fa5a3a99b36b019755",
+      "calib.json": "b5069ca4077b7e6b5d1fb3c0a0577c6ef14f18b8e694a79ad23c90d395f1b0fe",
+      "reach_head.npz": "e5dba740576fe27ee931e3334b01c8cda86cf9f14ec3c14d47914717fd6c77c9",
+      "reach_calib.json": "d2714c410a3ae8a48d558868b34bf77a3dde2a25ce40e7518587133929e7bffe",
+      "qm_calib.json": "b6f95872ff0a7ba6290b86b2b7d5b8e4a233f680cac8b86293d0d9294a43c514"
+    },
+    "qcal_src": "qm_calib.json"
+  },
+  "reference": {
+    "run": "reach_lstm",
+    "seed": "seed0",
+    "handoff": "sf/reach_lstm/D7reach_dev/E1_handoff_reach.json",
+    "sha256": {
+      "pred_test.npz": "9125290b8d9f148ff17587627ce342141be2d6a4f34658accfa1163e04f4d503",
+      "pred_val.npz": "715b08d2d5d8c27f6d8104b41535ba7e04338f3373dac478f9e36ec4a04cd617",
+      "calib.json": "01f88f475f283c05f0141010f59245d82c453870c7f06800577de26f20b7606f",
+      "reach_head.npz": "35debdc58a2fb4cc7f5f7a15a701c8aadf84a96a68ef9562bc6cf3fc45f5c296",
+      "reach_calib.json": "6d195fedf2d603019aeff4975d86b44bd89918d848eda25a9294abcf985445e6",
+      "qm_calib.json": "7b133dc905619e8a77e7b07f0d382f7e71e6622cdbb342f848b9d593b35cc318"
+    }
+  },
+  "base": {
+    "run": "base_M3",
+    "seed": "seed0",
+    "handoff": "sf/base_M3/D7_dev/E1_handoff.json",
+    "sha256": {
+      "pred_test.npz": "5b624d2344e370b221c72da4a31c059f94fa24f95d24060f9a87d6944de6cf02",
+      "pred_val.npz": "231fb01302afe8437661bff51166e5cd8838f9756cf942c767b565733ae805d8",
+      "calib.json": "c36b0452095c03e8f6db76c8336e97305fe4141d27159952708e70c77cbdf2b8",
+      "qm_calib.json": "2c140aa69ddb48f943b8a9c9c209a2566d16b57e581e2ae62863e0db54328f35"
+    }
+  },
+  "sD7_pred_eval_sha256": "0fe82c5d0600753fb05b5b52ef2bb1dc2cadd5cbd751e34a01b5c31723399b40",
+  "gate_G2": {
+    "G2.1 (% worker ไม่มีงานเอื้อม < 40)": {
+      "ok": true,
+      "value": "6.3 %"
+    },
+    "G2.2 (% task E_i < 0.5 < 20)": {
+      "ok": false,
+      "value": "22.9 %"
+    },
+    "G2.2b (% task E_i < K_i ≤ 70)": {
+      "ok": true,
+      "value": "33.9 %"
+    },
+    "frame check (median |Y − Δx_T| ≤ 5 m)": {
+      "ok": true,
+      "value": "2.70 m (p90 9.6, n=20138)"
+    },
+    "sanity A: guarded (9a′) ≥ (9a) same encoder, overall": {
+      "ok": true,
+      "value": "model 0.776 · tfm_ub 0.754 · nog 0.754 · in-domain 64 % ของคู่"
+    },
+    "sanity B: in-domain (9a′) > (9a) (ตรงกับ D7)": {
+      "ok": true,
+      "value": "in-dom (9a′) 0.735 vs (9a) 0.698"
+    },
+    "sanity C: model > null > persistence": {
+      "ok": true,
+      "value": "qm_model 0.776 · qm_model_nog 0.754 · qm_lstm_reach 0.768 · qm_tfm_ub 0.754 · qm_lstm_ub 0.751 · qm_trajgeom 0.750 · qm_null_dv 0.704 · qm_persist_cont 0.658"
+    }
+  },
+  "thomas": {
+    "n_centres_mean": 10,
+    "w_sigma": 0.5,
+    "sig_c": [
+      300.0,
+      800.0
+    ]
+  },
+  "durations": [
+    5,
+    10,
+    15,
+    20,
+    30
+  ]
+}

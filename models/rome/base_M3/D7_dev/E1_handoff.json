@@ -1,0 +1,34 @@
+{
+  "version": 7,
+  "city": "rome",
+  "run": "base_M3",
+  "split": "dev",
+  "clean_only": false,
+  "sub_steps": 1,
+  "qm": "ub",
+  "qm_variant_for_E1": "qm_ub_cal",
+  "R_main": 200,
+  "seed": "seed4",
+  "AUC_qm_ub_cal@200_per_seed": {
+    "seed0": 0.7956459848305778,
+    "seed1": 0.7947223597654977,
+    "seed2": 0.7911172121003401,
+    "seed3": 0.7915546447413742,
+    "seed4": 0.7919644143061532
+  },
+  "median_AUC": 0.7919644143061532,
+  "files": {
+    "pred_test.npz": "rome/base_M3/seed4/pred_test.npz",
+    "pred_val.npz": "rome/base_M3/seed4/pred_val.npz",
+    "calib.json": "rome/base_M3/seed4/calib.json",
+    "qm_calib.json": "rome/base_M3/seed4/qm_calib.json"
+  },
+  "sha256": {
+    "pred_test.npz": "98f336c25679d7a1379606b2ac29ff216e013a27d35d71ad4a69929c31116bab",
+    "pred_val.npz": "255e0b1053ddc0e382aa1b7a7faf699c93dbc2123e81ce3104a567533a115bcf",
+    "calib.json": "73ad513e6832c9120d0e483b3bb40a17253c275ae9920269872866b345b825ad",
+    "qm_calib.json": "35e366d41b3b4c52843e2104935797cdb9008d0114b1dfa063627df03c31b8bf"
+  },
+  "y_max_isotonic": 0.3709677419354839,
+  "note": "sai E ใช้ seed นี้ตัวเดียว: QM_ij = isotonic(qm_ub) จาก qm_calib.json กับ λ_h, T จาก calib.json · ตรวจ sha256 ก่อนใช้"
+}

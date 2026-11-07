@@ -1,0 +1,8 @@
+# config/data_sf_occ.yaml — abl_occ (M1): base_M3 + occ + occ_dt  (SF เท่านั้น)
+# ทุกค่าอื่นสืบจาก data_sf.yaml (base:) · ไม่แตะ data/sf/processed/ เดิม
+base: data_sf.yaml
+variant: occ
+processed_dir: processed_f11          # 9 ฟีเจอร์เดิม + occ + occ_dt
+features: [x, y, v, dx, dy, dow_sin, dow_cos, slot_sin, slot_cos, occ, occ_dt]
+occ_feature: true
+occ_dt_clip_min: 60                   # นาทีนับจากครั้งล่าสุดที่ occ เปลี่ยนค่า (clip 60) → z-score จาก train

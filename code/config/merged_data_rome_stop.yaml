@@ -1,0 +1,122 @@
+# สร้างอัตโนมัติจาก data_rome_stop.yaml + data_rome.yaml — อย่าแก้ไฟล์นี้ แก้ต้นฉบับ
+city: rome
+tz: Europe/Rome
+raw_dir: DataTaxiRome
+raw_format: roma_taxi
+bbox:
+  lat:
+  - 41.786
+  - 41.955
+  lon:
+  - 12.264
+  - 12.571
+origin:
+- 41.902
+- 12.4815
+task_bbox:
+  lat:
+  - 41.83
+  - 41.955
+  lon:
+  - 12.42
+  - 12.56
+dt_s: 60
+H: 60
+M_in: 8
+cycle_min: 60
+gap_max_s: 300
+resample_mode: downsample
+v_max_kmh: 150
+speed_filter_iters: 5
+speed_min_dt_s: 3
+parked_radius_m: 30
+parked_min_minutes: 30
+min_days_per_cab: 3
+min_points_per_cab: 1000
+R_m: 200
+pt_s: 60
+R_sensitivity:
+- 100
+- 150
+- 200
+- 250
+pt_sensitivity:
+- 30
+- 60
+- 120
+dates:
+  train:
+  - 2014-02-01
+  - 2014-02-18
+  val:
+  - 2014-02-19
+  - 2014-02-23
+  test:
+  - 2014-02-24
+  - 2014-02-28
+  test_dev:
+  - 2014-02-24
+  - 2014-02-25
+  test_final:
+  - 2014-02-26
+  - 2014-02-28
+  unused:
+  - 2014-03-01
+  - 2014-03-02
+usable_cycle_rule:
+  min_workers_ready: 60
+  weekdays_only: true
+features:
+- x
+- y
+- v
+- dx
+- dy
+- dow_sin
+- dow_cos
+- slot_sin
+- slot_cos
+- t_since_stop
+- last_stop_dur
+- n_stops_30
+- moving_streak
+occ_feature: false
+scaler_fit_on: train
+W: 60
+T: 200
+master_seed: 20260906
+audit:
+  n_cabs: 315
+  n_points_raw: 20252636
+  interval_p50_p75_p95_s:
+  - 7
+  - 10
+  - 15
+  pct_gap_gt_300s: 0.1
+  speed_p50_p95_p99_kmh:
+  - 1.5
+  - 64.9
+  - 130.6
+  pct_speed_gt_vmax: 0.7
+  pct_steps_below_1kmh: 47.0
+  hours_logged_per_cab_per_day: 5.0
+  residence_R200:
+    median_s: 58.6
+    pct_ge_30s: 74.7
+    pct_ge_60s: 48.9
+    pct_ge_120s: 17.8
+  visits_per_point_per_hour_all_cabs: 10.7
+  usable_cycles_total: 223
+  cabs_ready_per_cycle_median_weekday: 57
+  cabs_ready_per_cycle_max: 99
+variant: stop
+processed_dir: processed_f13
+stop_v_kmh: 2.0
+stop_min_s: 90
+stop_since_clip_min: 60
+stop_dur_clip_min: 30
+stop_count_window_min: 30
+stop_streak_clip_min: 60
+train_stride: 5
+val_stride: 5
+test_stride: 5

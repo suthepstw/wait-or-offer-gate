@@ -1,0 +1,76 @@
+# config/data_beijing.yaml — T-Drive · เคาะจาก D0 เต็ม (9,845 คัน) และ D0 เฉพาะคันความถี่สูง (655 คัน) วันที่ 2026-09-06
+# ชุดนี้มี 2 profile: hf = คันที่ median interval ≤ 60 s (ใช้ pipeline เดียวกับ SF/Rome) · full = ทุกคัน (เฉพาะ A7 scalability)
+city: beijing
+tz: Asia/Shanghai
+raw_dir: DataTaxiBejin              # โฟลเดอร์ taxi_log_2008_by_id/<id>.txt
+raw_format: tdrive                  # บรรทัด: id,YYYY-MM-DD HH:MM:SS,lon,lat  ← lon มาก่อน lat, เวลาท้องถิ่นไม่มี offset
+holiday_week: true                  # 2–8 ก.พ. 2008 คร่อมตรุษจีน (7 ก.พ.) — ต้องระบุในบทความ
+
+profile: hf                         # ← สลับเป็น full เมื่อรัน A7
+
+hf:
+  cab_filter: {median_interval_le_s: 60}     # → 655 คัน · 4.89 M จุด · median interval ต่อคัน 14 s
+  bbox: {lat: [39.653, 40.356], lon: [115.969, 117.022]}     # auto; กว้าง ~78 × 90 km ตัด 7.0%
+  origin: [39.9158, 116.3936]
+  task_bbox: {lat: [39.820, 40.010], lon: [116.280, 116.520]}   # ในวงแหวน 4 (ข้อเสนอ — งานต้องอยู่ในเขตหนาแน่น ไม่งั้น |C_j| บาง)
+  dt_s: 60                          # downsample จาก ~14 s
+  H: 60
+  M_in: 8
+  gap_max_s: 300
+  v_max_kmh: 150                    # ตัด 1.0%
+  min_days_per_cab: 2               # ชุด 7 วัน: เกณฑ์ 3 วัน/1,000 จุด ตัดคันไป 13% (655→570) → ผ่อนเป็น 2 วัน/300 จุด
+  min_points_per_cab: 300
+  clean_gap_mult: 3                 # หน้าต่าง "clean" สำหรับ reachability label: gap ≤ 3Δτ (ที่ 2Δτ ได้ 0 cycle เพราะ HF cabs ส่งเป็นช่วง ๆ)
+  instance_rule: {cycles_min: 15, draws_per_cycle: 2}   # ถ้า cycle ≥ 60 คันไม่ถึง 30 → สุ่ม W_k/T_k 2 ชุดต่อ cycle (ประกาศในบทความ)
+  R_m: 200                          # ≥ 60 s = 28.6 % — ต่ำกว่าช่วง 30–50 เล็กน้อย; คงค่ากลางเพื่อเทียบข้ามเมือง, R = 250 (38.5 %) อยู่ใน S3
+  pt_s: 60
+  dates:
+    train: [2008-02-02, 2008-02-04]   # 2 ก.พ. เริ่มกลางวัน
+    val:   [2008-02-05, 2008-02-05]
+    test:  [2008-02-06, 2008-02-08]   # 6 = วันก่อนตรุษจีน, 7 = ตรุษจีน, 8 จบก่อนเที่ยงคืน → 15 cycle ที่ ≥ 60 คัน (D4 จริง)
+    test_dev:   [2008-02-06, 2008-02-08]   # Beijing-HF มี cycle ไม่พอแบ่ง → ประกาศเป็น development-only (hard case, A7)
+    test_final: null
+  usable_cycle_rule: {min_workers_ready: 60, weekdays_only: false}
+  occ_feature: false
+  W: 60
+  T: 200
+  audit:
+    n_cabs: 655
+    n_points_raw: 4889103
+    cab_median_interval_p25_p50_p75_s: [12, 14, 31]
+    interval_point_p75_p90_p95_s: [29, 60, 105]
+    hours_logged_per_cab_per_day: 7.1
+    pct_parked_time: 31.9
+    residence_R200: {median_s: 37.9, pct_ge_30s: 62.7, pct_ge_60s: 28.6, pct_ge_120s: 9.2}
+    residence_R250: {pct_ge_60s: 38.5}
+    visits_per_point_per_hour_all_cabs: 5.5
+    cabs_ready_per_cycle_median: {feb3_5: 83-90, feb6_7: 61-64}
+    usable_cycles_total: 92
+  d1_d4_first_run: {cabs_after_filter: 570, pct_steps_gap_gt_2dt: 20.7, train_windows: 54021, test_cycles_ge_60: 15, median_cabs_per_cycle: 40}
+  d1_d4_final: {cabs_after_filter: 608, cabs_in_test: 439, pct_steps_gap_gt_2dt: 20.8, train_windows: 55386, test_windows: 33188,
+                test_cycle_windows: 2523, test_cycles_ge_60: 15, median_cabs_per_cycle: 40, clean_cycles: 0}
+  # → instance ของ Beijing-HF = 15 cycle × 2 draws (instance_rule) · reachability label ใช้หน้าต่าง is_cycle_start ทั้งหมด (ไม่มี clean)
+
+full:
+  cab_filter: null                  # 9,845 คัน · 15.06 M จุด · median interval ต่อคัน 300 s (6.6 % ≤ 60 s, 22.6 % ≤ 180 s)
+  bbox: {lat: [39.672, 40.357], lon: [116.030, 117.093]}
+  origin: [39.9224, 116.4055]
+  task_bbox: {lat: [39.820, 40.010], lon: [116.280, 116.520]}
+  dt_s: 180                         # H = 20, M_in = 3 — encounter หยาบ (ระยะจุด ~600 m > 2R) ประกาศเป็น caveat
+  H: 20
+  M_in: 3
+  gap_max_s: 600
+  v_max_kmh: 150
+  R_m: 200                          # ≥ 60 s = 37.6 % (ประมาณจาก segment เส้นตรง)
+  pt_s: 60
+  dates: {train: [2008-02-02, 2008-02-04], val: [2008-02-05, 2008-02-05], test: [2008-02-06, 2008-02-08]}
+  usable_cycle_rule: {min_workers_ready: 500, weekdays_only: false}
+  use_for: [A7_scalability]         # W ∈ {500, 1000, 2000, 3000}; ไม่ใช้ในตารางเทียบข้ามเมือง
+  occ_feature: false
+  audit:
+    n_cabs: 9845
+    n_points_raw: 15061091
+    cabs_ready_per_cycle_median: 2800-3600
+    usable_cycles_total: 145
+
+master_seed: 20260906

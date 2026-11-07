@@ -1,0 +1,33 @@
+{
+  "version": "reach-1",
+  "estimator": "(9a') direct reachability head + isotonic (9a-iii)",
+  "city": "rome",
+  "run": "reach_tfm",
+  "split": "dev",
+  "R_main": 200,
+  "seed": "seed2",
+  "AUC_qm_reach_cal_per_seed": {
+    "seed0": 0.829611854481569,
+    "seed1": 0.8317343065447684,
+    "seed2": 0.8304514909180083
+  },
+  "median_AUC": 0.8304514909180083,
+  "files": {
+    "pred_test.npz": "rome/reach_tfm/seed2/pred_test.npz",
+    "pred_val.npz": "rome/reach_tfm/seed2/pred_val.npz",
+    "calib.json": "rome/reach_tfm/seed2/calib.json",
+    "reach_head.npz": "rome/reach_tfm/seed2/reach_head.npz",
+    "reach_calib.json": "rome/reach_tfm/seed2/reach_calib.json",
+    "qm_calib.json": "rome/reach_tfm/seed2/qm_calib.json"
+  },
+  "sha256": {
+    "pred_test.npz": "af90762ec12d2625f32fdb619010a9a6a64fff22a169d6efb5d837deb8c04693",
+    "pred_val.npz": "78e007fcb4d5a00c91c69e445814f2b7d8a57fffdcd8692e9279ad48bbb4d3cb",
+    "calib.json": "ec4aa28b877c91d5ae5b29923de07139fc47d435041075d716f5a01a629f3295",
+    "reach_head.npz": "a4c6278b7f79922f4f6e2f344045e458a1b7aec3ee6f852c3383305422774b9b",
+    "reach_calib.json": "7a42d9a47d50dcacfde2a7295c88ba676056561017bcf97842073024ae1dd82d",
+    "qm_calib.json": "672e95534f2c285ed7fe4f02c710d853a8549b099ddf9e483a772cd5874bbd20"
+  },
+  "how_to_compute_C_ij": "z_j = pred_*.npz['feat64'] (N×64 float16→float32) · q_ij = query_feats(l_i − x_j(τ0), st, et, R, H) · logit = reach_head_np(reach_head.npz, z_j, q_ij) · C̃ = sigmoid(logit) · C_ij = isotonic(reach_calib.json['R'][str(R)]) · อ่าน sD5_train_v4.query_feats / reach_head_np · ตรวจ sha256 ก่อนใช้",
+  "note": "สาย E ใช้ seed นี้ตัวเดียว · base_M3 E1_handoff.json (v7) ยังใช้สำหรับ arm trajectory-then-geometry"
+}

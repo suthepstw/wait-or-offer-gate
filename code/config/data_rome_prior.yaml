@@ -1,0 +1,11 @@
+# config/data_rome_prior.yaml — abl_prior (M5): fleet transition prior 32 มิติต่อหน้าต่าง (จาก train เท่านั้น) · X/หน้าต่างเหมือน base ทุกแถว
+base: data_rome.yaml
+variant: prior
+processed_dir: processed_prior
+prior:
+  cell_m: 500          # กริดตำแหน่งปัจจุบัน
+  dcell_m: 1000        # bin ของการกระจัดที่ +horizon
+  k: 5                 # ±5 bin → 11×11 = 121 bins (ครอบคลุม ±5.5 km)
+  horizon_min: 60
+  shrink: 20           # pseudo-count ดึงเข้าหา histogram ของ slot (cell ที่มีตัวอย่างน้อย)
+  dim: 32              # PCA

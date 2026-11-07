@@ -1,0 +1,5 @@
+# config/data_sf_h30.yaml — abl_hist30 (M3): ประวัติ 30 ก้าว (30 นาที) แทน 8 · ฟีเจอร์เดิม · หน้าต่างต่างจาก base → D6/D7 v7 ใช้ --data data_h30
+base: data_sf.yaml
+variant: h30
+processed_dir: processed_h30
+M_in: 30

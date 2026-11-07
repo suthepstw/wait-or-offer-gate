@@ -1,0 +1,3 @@
+Python: Python 3.12.3
+OS: Linux 7.0.0-42-generic
+Built: 2026-11-07

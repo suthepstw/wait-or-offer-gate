@@ -1,0 +1,121 @@
+# สร้างอัตโนมัติจาก data_sf_occstop.yaml + data_sf.yaml — อย่าแก้ไฟล์นี้ แก้ต้นฉบับ
+city: sf
+tz: America/Los_Angeles
+raw_dir: DataTaxiSanFran
+raw_format: cabspotting
+bbox:
+  lat:
+  - 37.607
+  - 37.816
+  lon:
+  - -122.487
+  - -122.344
+origin:
+- 37.7814
+- -122.4115
+task_bbox:
+  lat:
+  - 37.7
+  - 37.816
+  lon:
+  - -122.487
+  - -122.38
+dt_s: 60
+H: 60
+M_in: 8
+cycle_min: 60
+gap_max_s: 300
+v_max_kmh: 150
+speed_filter_iters: 5
+parked_radius_m: 30
+parked_min_minutes: 30
+min_days_per_cab: 3
+min_points_per_cab: 1000
+R_m: 200
+pt_s: 60
+R_sensitivity:
+- 100
+- 150
+- 200
+- 250
+pt_sensitivity:
+- 30
+- 60
+- 120
+dates:
+  train:
+  - 2008-05-17
+  - 2008-06-01
+  val:
+  - 2008-06-02
+  - 2008-06-04
+  test:
+  - 2008-06-05
+  - 2008-06-08
+  test_dev:
+  - 2008-06-05
+  - 2008-06-06
+  test_final:
+  - 2008-06-07
+  - 2008-06-08
+holidays:
+- 2008-05-26
+usable_cycle_rule:
+  min_workers_ready: 60
+  weekdays_only: false
+features:
+- x
+- y
+- v
+- dx
+- dy
+- dow_sin
+- dow_cos
+- slot_sin
+- slot_cos
+- occ
+- occ_dt
+- t_since_stop
+- last_stop_dur
+- n_stops_30
+- moving_streak
+occ_feature: true
+scaler_fit_on: train
+W: 60
+T: 200
+master_seed: 20260906
+audit:
+  n_cabs: 536
+  n_points_raw: 10772140
+  interval_p50_p75_p95_s:
+  - 60
+  - 62
+  - 114
+  pct_gap_gt_300s: 1.0
+  speed_p50_p95_p99_kmh:
+  - 14.4
+  - 98.5
+  - 132.1
+  pct_speed_gt_vmax: 0.7
+  hours_logged_per_cab_per_day: 13.4
+  residence_R200:
+    median_s: 50.6
+    pct_ge_30s: 71.8
+    pct_ge_60s: 41.4
+    pct_ge_120s: 13.1
+  visits_per_point_per_hour_all_cabs: 72.6
+  usable_cycles_total: 530
+  cabs_ready_per_cycle_median: 190
+variant: occstop
+processed_dir: processed_f15
+occ_dt_clip_min: 60
+stop_v_kmh: 2.0
+stop_min_s: 90
+stop_since_clip_min: 60
+stop_dur_clip_min: 30
+stop_count_window_min: 30
+stop_streak_clip_min: 60
+stop_proxy_tol_min: 2
+train_stride: 5
+val_stride: 5
+test_stride: 5

@@ -1,0 +1,12 @@
+# config/data_rome_stop.yaml — abl_stop (M2) สำหรับ Rome: ไม่มี occupancy → stop-event 4 ตัวจาก motion อย่างเดียว (F_common)
+base: data_rome.yaml
+variant: stop
+processed_dir: processed_f13
+features: [x, y, v, dx, dy, dow_sin, dow_cos, slot_sin, slot_cos, t_since_stop, last_stop_dur, n_stops_30, moving_streak]
+occ_feature: false
+stop_v_kmh: 2.0
+stop_min_s: 90
+stop_since_clip_min: 60
+stop_dur_clip_min: 30
+stop_count_window_min: 30
+stop_streak_clip_min: 60

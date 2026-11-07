@@ -1,0 +1,12 @@
+# config/data_sf_stop.yaml — abl_stop (M2): base_M3 + stop-event 4 ตัว  (F_common: เทียบ Rome ได้ตรง ๆ, ไม่มี occ)
+base: data_sf.yaml
+variant: stop
+processed_dir: processed_f13          # 9 + t_since_stop, last_stop_dur, n_stops_30, moving_streak
+features: [x, y, v, dx, dy, dow_sin, dow_cos, slot_sin, slot_cos, t_since_stop, last_stop_dur, n_stops_30, moving_streak]
+stop_v_kmh: 2.0                       # "หยุด" = v < 2 km/h
+stop_min_s: 90                        # ติดต่อกัน ≥ 90 s → บนกริด 60 s = ≥ 2 ก้าวติดกัน (120 s)
+stop_since_clip_min: 60
+stop_dur_clip_min: 30
+stop_count_window_min: 30
+stop_streak_clip_min: 60
+stop_proxy_tol_min: 2                 # ตรวจ proxy: stop-event ↔ occ-transition ภายใน ±2 นาที (SF เท่านั้น)

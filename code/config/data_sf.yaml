@@ -1,0 +1,65 @@
+# config/data_sf.yaml — เคาะจาก D0 audit เต็ม (536 คัน, 10.77 M จุด) วันที่ 2026-09-06
+city: sf
+tz: America/Los_Angeles
+raw_dir: DataTaxiSanFran            # โฟลเดอร์ที่มี new_<id>.txt (ค้นหาโฟลเดอร์ย่อยด้วย)
+raw_format: cabspotting             # บรรทัด: lat lon occ unix_time (ไฟล์เรียงใหม่→เก่า)
+
+# ---- ขอบเขต (D0: percentile 2.5–97.5 + 1 km; ตัด 4.0% ของจุด; รวมทางไป SFO)
+bbox: {lat: [37.607, 37.816], lon: [-122.487, -122.344]}
+origin: [37.7814, -122.4115]
+task_bbox: {lat: [37.700, 37.816], lon: [-122.487, -122.380]}   # LGCP วางงานเฉพาะเขตเมือง (ข้อเสนอ — ยืนยัน)
+
+# ---- เวลา (D0 ①: p50 = 60 s, p75 = 62 s, p95 = 114 s)
+dt_s: 60
+H: 60                               # = 60 นาที / Δτ
+M_in: 8                             # = 8 นาทีของประวัติ
+cycle_min: 60
+gap_max_s: 300                      # ≥ p95 (114 s) และ ≥ 3Δτ; sensitivity {180, 300, 600}
+
+# ---- clean (D0 ②: v > 150 km/h = 0.7%, จอดนิ่ง > 30 นาที = 8.4% ของเวลา)
+v_max_kmh: 150
+speed_filter_iters: 5
+parked_radius_m: 30
+parked_min_minutes: 30
+min_days_per_cab: 3
+min_points_per_cab: 1000
+
+# ---- sensing (D0 ③ ที่ R = 200 m: median residence 50.6 s, ≥ 60 s = 41.4 %)
+R_m: 200
+pt_s: 60
+R_sensitivity: [100, 150, 200, 250]
+pt_sensitivity: [30, 60, 120]
+
+# ---- split ตามวัน (D0 ④: 20–24 cycle/วัน ที่ ≥ 60 คัน; 9–10 มิ.ย. ข้อมูลขาด → ตัด)
+dates:
+  train: [2008-05-17, 2008-06-01]   # 16 วัน
+  val:   [2008-06-02, 2008-06-04]   # 3 วัน
+  test:  [2008-06-05, 2008-06-08]   # 4 วัน → 90 cycle ที่ ≥ 60 คัน (ชุด test ของ D4 ทั้งก้อน)
+  test_dev:   [2008-06-05, 2008-06-06]   # development test — ใช้ออกแบบโปรโตคอล/ตรวจ gate (ทุกการตัดสินใจก่อน freeze ทำบนชุดนี้)
+  test_final: [2008-06-07, 2008-06-08]   # final test — เปิดครั้งเดียวหลัง freeze โปรโตคอล (≈45 cycle) → ตัวเลขที่ลงบทความ
+holidays: [2008-05-26]              # Memorial Day (median คันพร้อม 155 vs ~190)
+usable_cycle_rule: {min_workers_ready: 60, weekdays_only: false}
+
+# ---- ฟีเจอร์
+features: [x, y, v, dx, dy, dow_sin, dow_cos, slot_sin, slot_cos, occ]
+occ_feature: true
+scaler_fit_on: train
+
+# ---- ขนาดปัญหา
+W: 60
+T: 200
+master_seed: 20260906
+
+# ---- ตัวเลขจาก D0 ที่ต้องลงบทความ
+audit:
+  n_cabs: 536
+  n_points_raw: 10772140
+  interval_p50_p75_p95_s: [60, 62, 114]
+  pct_gap_gt_300s: 1.0
+  speed_p50_p95_p99_kmh: [14.4, 98.5, 132.1]
+  pct_speed_gt_vmax: 0.7
+  hours_logged_per_cab_per_day: 13.4
+  residence_R200: {median_s: 50.6, pct_ge_30s: 71.8, pct_ge_60s: 41.4, pct_ge_120s: 13.1}
+  visits_per_point_per_hour_all_cabs: 72.6
+  usable_cycles_total: 530
+  cabs_ready_per_cycle_median: 190

@@ -1,0 +1,26 @@
+{
+ "version": "E6-gatedef v0.2 (2026-10-24: + greedy baseline)",
+ "rule": "max mean f1* over sf, rome",
+ "select": {
+  "b0dz": {
+   "name": "b0dz_k1.5",
+   "param": 1.5,
+   "f1_avg": 0.18366666666666667
+  },
+  "g1dz": {
+   "name": "g1dz_d20",
+   "param": 20.0,
+   "f1_avg": 0.13466666666666668
+  },
+  "g2dz": {
+   "name": "g2dz_t0.25",
+   "param": 0.25,
+   "f1_avg": 0.1722083333333333
+  },
+  "g3dz": {
+   "name": "g3dz_k1.0",
+   "param": 1.0,
+   "f1_avg": 0.14450000000000002
+  }
+ }
+}

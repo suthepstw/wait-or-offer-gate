@@ -1,0 +1,39 @@
+# ค่าที่ใช้ในรูป (ทั้ง 9 รูป)
+
+- San Francisco Learned, no gate: quota@t {0: 0.901, 10: 0.991, 20: 1.0, 30: 1.0, 40: 1.0, 50: 1.0} · done/200 end 0.071
+- San Francisco Learned + gate: quota@t {0: 0.021, 10: 0.071, 20: 0.163, 30: 0.284, 40: 0.504, 50: 0.699} · done/200 end 0.166
+- San Francisco Physics + gate: quota@t {0: 0.031, 10: 0.188, 20: 0.378, 30: 0.551, 40: 0.681, 50: 0.831} · done/200 end 0.204
+- San Francisco Oracle: quota@t {0: 0.718, 10: 0.759, 20: 0.776, 30: 0.785, 40: 0.786, 50: 0.787} · done/200 end 0.592
+- Rome Learned, no gate: quota@t {0: 0.828, 10: 0.943, 20: 0.981, 30: 0.986, 40: 0.987, 50: 0.988} · done/200 end 0.073
+- Rome Learned + gate: quota@t {0: 0.142, 10: 0.254, 20: 0.398, 30: 0.513, 40: 0.631, 50: 0.768} · done/200 end 0.164
+- Rome Physics + gate: quota@t {0: 0.049, 10: 0.222, 20: 0.4, 30: 0.554, 40: 0.646, 50: 0.774} · done/200 end 0.172
+- Rome Oracle: quota@t {0: 0.611, 10: 0.643, 20: 0.653, 30: 0.658, 40: 0.661, 50: 0.661} · done/200 end 0.474
+- Learned predictor, NSGA-II San Francisco: gate wins 30/30 · mean 0.071 → 0.166
+- Learned predictor, NSGA-II Rome: gate wins 30/30 · mean 0.073 → 0.164
+- Physics predictor, NSGA-II San Francisco: gate wins 30/30 · mean 0.067 → 0.205
+- Physics predictor, NSGA-II Rome: gate wins 30/30 · mean 0.071 → 0.172
+- Learned predictor, greedy San Francisco: gate wins 28/30 · mean 0.079 → 0.148
+- Learned predictor, greedy Rome: gate wins 29/30 · mean 0.088 → 0.145
+- AUC San Francisco: learned {0: 0.771, 10: 0.801, 20: 0.832, 30: 0.859, 40: 0.893, 50: 0.937} · persistence {0: 0.66, 10: 0.702, 20: 0.738, 30: 0.773, 40: 0.825, 50: 0.892}
+- AUC Rome: learned {0: 0.806, 10: 0.841, 20: 0.868, 30: 0.896, 40: 0.924, 50: 0.966} · persistence {0: 0.745, 10: 0.786, 20: 0.817, 30: 0.853, 40: 0.896, 50: 0.949}
+- cumulative SF Learned free withdrawal (e5replan): {0: 3.3, 10: 13.0, 20: 25.4, 30: 36.8, 40: 47.1, 50: 53.2}
+- cumulative SF Physics free withdrawal (e5replan): {0: 3.2, 10: 14.2, 20: 27.4, 30: 39.5, 40: 50.7, 50: 56.8}
+- cumulative SF Learned sticky (e5replan_sticky3): {0: 3.3, 10: 7.0, 20: 9.5, 30: 12.1, 40: 13.7, 50: 14.3}
+- cumulative SF Physics sticky (e5replan_sticky3): {0: 3.2, 10: 8.0, 20: 10.7, 30: 12.0, 40: 13.0, 50: 13.4}
+- cumulative SF Oracle sticky (e5replan_sticky3): {0: 11.7, 10: 34.6, 20: 59.9, 30: 85.0, 40: 108.1, 50: 118.4}
+- main San Francisco: [np.float64(0.071), np.float64(0.067), np.float64(0.166), np.float64(0.205)] · free 0.266
+- main Rome: [np.float64(0.073), np.float64(0.07), np.float64(0.164), np.float64(0.172)] · free 0.247
+- dev b0dz_k San Francisco: [np.float64(0.109), np.float64(0.176), np.float64(0.188), np.float64(0.15), np.float64(0.079)]
+- dev b0dz_k Rome: [np.float64(0.121), np.float64(0.157), np.float64(0.18), np.float64(0.182), np.float64(0.162)]
+- dev g2dz_t San Francisco: [np.float64(0.078), np.float64(0.088), np.float64(0.105), np.float64(0.144), np.float64(0.173), np.float64(0.182), np.float64(0.155), np.float64(0.092)]
+- dev g2dz_t Rome: [np.float64(0.088), np.float64(0.101), np.float64(0.128), np.float64(0.144), np.float64(0.148), np.float64(0.163), np.float64(0.162), np.float64(0.158)]
+- ablation Waiting only (no threshold) San Francisco: Δ -0.047 [-0.059, -0.035] W/L 2/28
+- ablation Waiting only (no threshold) Rome: Δ -0.050 [-0.060, -0.041] W/L 0/30
+- ablation Uncalibrated $C$ San Francisco: Δ -0.026 [-0.033, -0.017] W/L 2/28
+- ablation Uncalibrated $C$ Rome: Δ -0.042 [-0.053, -0.031] W/L 1/27
+- ablation Greedy instead of NSGA-II San Francisco: Δ -0.018 [-0.025, -0.011] W/L 3/22
+- ablation Greedy instead of NSGA-II Rome: Δ -0.020 [-0.029, -0.010] W/L 5/24
+- ablation Zero-probability offers kept San Francisco: Δ -0.014 [-0.020, -0.008] W/L 7/20
+- ablation Zero-probability offers kept Rome: Δ -0.015 [-0.021, -0.010] W/L 3/24
+- ablation Fixed threshold (no $V_q(t)$) San Francisco: Δ -0.003 [-0.010, +0.005] W/L 7/21
+- ablation Fixed threshold (no $V_q(t)$) Rome: Δ -0.010 [-0.016, -0.003] W/L 7/23
